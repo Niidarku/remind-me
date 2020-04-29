@@ -4,7 +4,7 @@ from .forms import UserForm, UserProfileInfoForm
 # Create your views here.
 
 def index(request):
-    return render(request, 'todos/index.html')
+    return render(request, 'Todos/index.html')
 
 
 
@@ -35,7 +35,7 @@ def register(request):
         user_form = UserForm()
         profile_form= UserProfileInfoForm()
 
-    return render(request, 'todos/register.html',
+    return render(request, 'Todos/register.html',
                                 {'user_form':user_form,
                                 'profile_form':profile_form,
                                  'registered':registered})

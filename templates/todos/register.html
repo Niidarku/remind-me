@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login/SignUp</title>
-</head>
-<body>
-    <div>
+{% extends 'Todos/base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+
+
+    <div class="jumbotron">
         {% if registered %}
-        <h1>Thank you for registering!</h1>
+            <h1>Thank you for registering!</h1>
         {%else%}
-        <h1>Please Register Here!</h1>
-        <h3>Fill Out the Form</h3>
-        <form enctype="multipart/form-data" method="POST">
-        {%csrf_token%}
-        {{user_form.as_p}}
-        {{profile_form.as_p}}
-        <input type="submit" name="" value="Register">
-    </form>
+            <h1>Please Register Here!</h1>
+            <h3>Fill Out the Form</h3>
+            <form enctype="multipart/form-data" method="POST">
+                {%csrf_token%}
+                {{user_form.as_p}}
+                {{profile_form.as_p}}
+                <input type="submit" name="" value="Register">
+            </form>
         {% endif %}
+{% endblock %}
+
     </div>
 
-</body>
-</html>
+
